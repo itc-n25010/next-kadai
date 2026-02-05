@@ -10,11 +10,9 @@ type Props = {
 };
 
 export default async function CharacterDetailPage({ params }: Props) {
-  let character;
+  const character = await getCharacterDetail(params.id);
 
-  try {
-    character = await getCharacterDetail(params.id);
-  } catch {
+  if (!character) {
     notFound();
   }
 
@@ -24,14 +22,12 @@ export default async function CharacterDetailPage({ params }: Props) {
       <div className={styles.imageWrapper}>
         <Image
           src={character.image?.url || "/no-image.png"}
-          alt={character.name}
+          alt={character.name || "キャラクター画像"}
           width={360}
           height={640}
           priority
-          className={styles.image}
         />
       </div>
-
       {/* 情報 */}
       <div className={styles.content}>
         <h1 className={styles.name}>{character.name}</h1>
@@ -42,10 +38,12 @@ export default async function CharacterDetailPage({ params }: Props) {
           <li>所属：{character.role}</li>
         </ul>
 
-        <div
-          className={styles.profile}
-          dangerouslySetInnerHTML={{ __html: character.profile }}
-        />
+        {character.profile && (
+          <div
+            className={styles.profile}
+            dangerouslySetInnerHTML={{ __html: character.profile }}
+          />
+        )}
       </div>
     </main>
   );
