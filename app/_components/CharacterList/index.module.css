@@ -1,0 +1,135 @@
+/* index.module.css */
+
+.list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 20px;
+  padding: 0 20px 40px;
+}
+
+.item {
+  text-align: center;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  background-color: #f4f6fb;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.image {
+  object-fit: contain;
+}
+
+.name {
+  margin-top: 8px;
+  font-weight: 600;
+}
+
+.list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 24px;
+  padding: 0 20px 40px;
+}
+
+/* カード全体 */
+.item {
+  background: linear-gradient(180deg, #ffffff 0%, #f3f6ff 100%);
+  border-radius: 16px;
+  box-shadow:
+    0 6px 20px rgba(60, 90, 200, 0.15),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.6);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(60, 90, 200, 0.25);
+}
+
+/* 画像 */
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  background: radial-gradient(circle at top, #e8eeff, #cfd9ff);
+  border-radius: 16px 16px 0 0;
+  overflow: hidden;
+}
+
+.image {
+  object-fit: contain;
+}
+
+/* 名前 */
+.name {
+  padding: 10px 0 14px;
+  font-weight: 600;
+  color: #1a1a2e;
+}
+/* 学園カラー枠 */
+.abydos {
+  border: 2px solid #ffd447;
+}
+
+.gehenna {
+  border: 2px solid #e35b5b;
+}
+
+.millennium {
+  border: 2px solid #4ea5ff;
+}
+
+.trinity {
+  border: 2px solid #bba3ff;
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.schoolTitle {
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+.list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 16px;
+}
+
+.item {
+  border-radius: 12px;
+  padding: 12px;
+  background: linear-gradient(180deg, #fff, #f4f6ff);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
+}
+
+/* 学園カラー */
+.abydos {
+  border: 2px solid #e0b94a;
+}
+
+.gehenna {
+  border: 2px solid #c94a4a;
+}
+
+.millennium {
+  border: 2px solid #4aa3ff;
+}
+
+.trinity {
+  border: 2px solid #d6d6ff;
+}
+
+.defaultSchool {
+  border: 2px solid #ccc;
+}

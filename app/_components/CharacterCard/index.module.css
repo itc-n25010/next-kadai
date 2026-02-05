@@ -1,0 +1,26 @@
+.card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.image {
+  border-radius: 8px;
+}
+
+.name {
+  margin-top: 12px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.school {
+  font-size: 14px;
+  color: #666;
+}
