@@ -1,0 +1,21 @@
+.container {
+  padding: 24px;
+}
+
+.section {
+  margin-bottom: 40px;
+}
+
+.school {
+  margin-bottom: 16px;
+  font-size: 20px;
+  color: #eaf2ff;
+  border-left: 6px solid #4da3ff;
+  padding-left: 10px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 16px;
+}

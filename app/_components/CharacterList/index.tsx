@@ -20,6 +20,7 @@ const schoolClassMap: Record<string, string> = {
   ゲヘナ学園: styles.gehenna,
   ミレニアムサイエンススクール: styles.millennium,
   トリニティ総合学園: styles.trinity,
+  無所属: styles.defaultSchool,
 };
 
 export default function CharacterList({ characters }: Props) {
@@ -37,7 +38,6 @@ export default function CharacterList({ characters }: Props) {
     <div className={styles.wrapper}>
       {Object.entries(grouped).map(([school, chars]) => (
         <section key={school} className={styles.section}>
-          {/* 学園名 */}
           <h2 className={styles.schoolTitle}>{school}</h2>
 
           <ul className={styles.list}>

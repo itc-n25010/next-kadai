@@ -1,38 +1,110 @@
-.container {
-  max-width: 1000px;
-  margin: 40px auto;
-  padding: 0 20px;
+/* 全体 */
+.wrapper {
   display: grid;
-  grid-template-columns: 400px 1fr;
-  gap: 40px;
+  grid-template-columns: 420px 1fr;
+  gap: 32px;
+  padding: 48px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.imageWrapper {
-  background: #fff;
-  border-radius: 12px;
-  padding: 20px;
-  text-align: center;
-}
-
-.content {
-  background: #fff;
-  border-radius: 12px;
-  padding: 24px;
-}
-
-.name {
-  font-size: 28px;
-  margin-bottom: 16px;
-}
-
-.meta {
+/* =====================
+   左：立ち絵エリア
+===================== */
+.imageArea {
   display: flex;
-  gap: 16px;
-  margin-bottom: 24px;
-  font-size: 14px;
-  color: #555;
+  justify-content: center;
+  align-items: flex-end;
+  border-radius: 20px;
+  padding: 16px;
+  background: linear-gradient(160deg, #e9f2ff, #ffffff);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.2);
 }
 
+/* 学園カラー枠 */
+.アビドス高等学校 {
+  border: 4px solid #4ec3d9;
+}
+.ゲヘナ学園 {
+  border: 4px solid #c94a4a;
+}
+.ミレニアムサイエンススクール {
+  border: 4px solid #4aa3ff;
+}
+.トリニティ総合学園 {
+  border: 4px solid #f3f057;
+}
+
+/* =====================
+   右：情報カード
+===================== */
+.infoCard {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 640px;
+  padding: 36px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 24px;
+  padding: 36px;
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.18);
+
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* キャラ名 */
+.name {
+  font-size: 5rem;
+  font-weight: 800;
+  color: #1f2a44;
+}
+
+/* メタ情報 */
+.meta {
+  display: grid;
+  grid-template-columns: repeat(4, 1, 1);
+  gap: 16px;
+}
+
+.meta li {
+  background: #f3f6fb;
+  border-radius: 16px;
+  padding: 16px 12px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #1f2a44;
+}
+
+.meta span {
+  display: block;
+  font-size: 0.75rem;
+  color: #6b7280;
+  margin-bottom: 4px;
+}
+
+/* プロフィール */
 .profile {
   line-height: 1.8;
+  font-size: 0.95rem;
+  color: #334155;
+}
+
+.profile p + p {
+  margin-top: 1em;
+}
+@media (max-width: 900px) {
+  .wrapper {
+    grid-template-columns: 1fr;
+    padding: 24px;
+  }
+
+  .imageArea {
+    align-items: center;
+  }
+
+  .meta {
+    grid-template-columns: 1fr;
+  }
 }

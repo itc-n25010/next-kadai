@@ -1,0 +1,27 @@
+.header {
+  display: grid;
+  grid-template-columns: 60px 1fr 60px;
+  align-items: center;
+  margin: 48px 0 24px;
+  padding: 12px 0;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.15);
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.logo img {
+  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.25));
+}
+
+.title {
+  font-size: 1.8rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  margin-bottom: 12px;
+  color: #1f2a44;
+  text-align: center;
+}

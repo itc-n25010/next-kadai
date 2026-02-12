@@ -9,42 +9,49 @@ type Props = {
   };
 };
 
-export default async function CharacterDetailPage({ params }: Props) {
-  const character = await getCharacterDetail(params.id);
+export default async function CharacterCardPage({ params }: Props) {
+  const resolvedParams = await params;
+  const { id } = resolvedParams;
+  console.log(id);
+
+  let character;
+  try {
+    character = await getCharacterDetail(id);
+    console.log(character);
+  } catch {
+    notFound();
+  }
 
   if (!character) {
     notFound();
   }
 
   return (
-    <main className={styles.container}>
-      {/* 立ち絵 */}
-      <div className={styles.imageWrapper}>
+    <main className={styles.wrapper}>
+      {/* 左：立ち絵 */}
+      <div className={`${styles.imageArea} ${styles[character.school]}`}>
         <Image
           src={character.image?.url || "/no-image.png"}
-          alt={character.name || "キャラクター画像"}
+          alt={`${character.name} の立ち絵`}
           width={360}
           height={640}
           priority
         />
       </div>
-      {/* 情報 */}
-      <div className={styles.content}>
-        <h1 className={styles.name}>{character.name}</h1>
 
+      {/* 右：情報カード */}
+      <section className={styles.infoCard}>
         <ul className={styles.meta}>
+          <li className={styles.name}>{character.name}</li>
           <li>学校：{character.school}</li>
           <li>学年：{character.grade}</li>
           <li>所属：{character.role}</li>
-        </ul>
-
-        {character.profile && (
-          <div
+          <li
             className={styles.profile}
-            dangerouslySetInnerHTML={{ __html: character.profile }}
-          />
-        )}
-      </div>
+            dangerouslySetInnerHTML={{ __html: character.profile ?? "" }}
+          ></li>
+        </ul>
+      </section>
     </main>
   );
 }

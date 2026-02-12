@@ -1,26 +1,82 @@
 .card {
+  border-radius: 16px;
   background: #fff;
-  border-radius: 12px;
-  padding: 16px;
-  text-align: center;
-  transition: transform 0.2s;
+  padding: 10px;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .card:hover {
   transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+}
+
+.abydos {
+  background: linear-gradient(180deg, #6ad7ea, #4ec3d9);
+  border: 3px solid #4ec3d9;
+  box-shadow: 0 0 0 rgba(78, 195, 217, 0.6);
+}
+
+.abydos:hover {
+  box-shadow: 0 0 16px rgba(78, 195, 217, 0.6);
+}
+
+.gehenna {
+  background: linear-gradient(180deg, #e06b6b, #c94a4a);
+  border: 3px solid #c94a4a;
+}
+
+.gehenna:hover {
+  box-shadow: 0 0 16px rgba(201, 74, 74, 0.6);
+}
+
+.millennium {
+  background: linear-gradient(180deg, #7fc1ff, #4aa3ff);
+  border: 3px solid #4aa3ff;
+}
+
+.millennium:hover {
+  box-shadow: 0 0 16px rgba(74, 163, 255, 0.6);
+}
+
+.trinity {
+  background: linear-gradient(180deg, #fff7a8, #f3f057);
+  border: 3px solid #f3f057;
+}
+
+.trinity:hover {
+  box-shadow: 0 0 16px rgba(243, 240, 87, 0.7);
+}
+
+.defaultSchool {
+  background: #ccc;
+  border: 3px solid #ccc;
+}
+
+/* =====================
+   中身
+===================== */
+
+.link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  margin-bottom: 8px;
 }
 
 .image {
-  border-radius: 8px;
+  object-fit: contain;
 }
 
 .name {
-  margin-top: 12px;
-  font-size: 18px;
-  font-weight: bold;
-}
-
-.school {
-  font-size: 14px;
-  color: #666;
+  text-align: center;
+  font-weight: 700;
+  font-size: 0.95rem;
 }
