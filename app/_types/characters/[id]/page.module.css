@@ -21,10 +21,11 @@
 
 .imageWrapper {
   position: relative;
-  width: 100%;
-  aspect-ratio: 9 / 16; /* 立ち絵比率 */
-  overflow: hidden;
-  background: #f4f6fb;
+  width: 360px;
+  aspect-ratio: 9 / 16;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .image {

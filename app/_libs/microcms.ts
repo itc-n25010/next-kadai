@@ -23,7 +23,7 @@ export async function getAllCharacters(): Promise<Character[]> {
 /* =========================
    キャラクター一覧（制限あり）
 ========================= */
-export async function getCharacterList(limit = 20): Promise<Character[]> {
+export async function getCharacterList(limit = 100): Promise<Character[]> {
   const res = await client.getList<Character>({
     endpoint: "characters",
     queries: { limit },

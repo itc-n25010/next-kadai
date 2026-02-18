@@ -56,6 +56,10 @@ export default async function CharacterDetailPage({ params }: Props) {
             {character.role}
           </li>
           <li>
+            <span>身長</span>
+            {character.stature}
+          </li>
+          <li>
             <span>趣味</span>
             {character.hobby || "不明"}
           </li>
