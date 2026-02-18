@@ -1,51 +1,43 @@
 import { createClient } from "microcms-js-sdk";
+import type { Character } from "@/app/_types/character";
 
-/* =========================
-   microCMS クライアント
-========================= */
 export const client = createClient({
   serviceDomain: process.env.MICROCMS_SERVICE_DOMAIN!,
   apiKey: process.env.MICROCMS_API_KEY!,
 });
 
 /* =========================
-   型定義
+   キャラクター一覧（制限なし）
 ========================= */
-
-// キャラクター型
-export type Character = {
-  id: string;
-  name: string; // 名前
-  school: string; // 学校
-  grade: string; // 学年
-  role: string; // 所属
-  profile: string; // プロフィール（リッチテキスト）
-  image?: {
-    url: string;
-    height?: number;
-    width?: number;
-  };
-};
-
-/* =========================
-   キャラクター一覧取得
-========================= */
-export const getCharacterList = async () => {
-  const data = await client.getList<Character>({
+export async function getAllCharacters(): Promise<Character[]> {
+  const res = await client.getList<Character>({
     endpoint: "characters",
+    queries: {
+      limit: 1000, // microCMSの最大値
+    },
   });
 
-  return data;
-};
+  return res.contents;
+}
 
 /* =========================
-   キャラクター詳細取得
+   キャラクター一覧（制限あり）
 ========================= */
-export const getCharacterDetail = async (id: string) => {
-  const data = await client.get<Character>({
+export async function getCharacterList(limit = 20): Promise<Character[]> {
+  const res = await client.getList<Character>({
+    endpoint: "characters",
+    queries: { limit },
+  });
+
+  return res.contents;
+}
+
+/* =========================
+   キャラクター詳細
+========================= */
+export async function getCharacterDetail(id: string): Promise<Character> {
+  return await client.getListDetail<Character>({
     endpoint: "characters",
     contentId: id,
   });
-
-  return data;
-};
+}

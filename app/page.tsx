@@ -3,7 +3,7 @@ import CharacterCard from "@/app/_components/CharacterCard";
 import SchoolSection from "@/app/_components/SchoolSection";
 
 export default async function Home() {
-  const { contents: characters } = await getCharacterList();
+  const characters = await getCharacterList();
 
   const groupedBySchool = characters.reduce<Record<string, typeof characters>>(
     (acc, character) => {
@@ -17,12 +17,10 @@ export default async function Home() {
 
   return (
     <main>
-      {Object.entries(groupedBySchool).map(([school, characters]) => (
+      {Object.entries(groupedBySchool).map(([school, chars]) => (
         <section key={school} style={{ marginBottom: "48px" }}>
-          {/* 学園ロゴ＋学園名 */}
           <SchoolSection school={school} />
 
-          {/* キャラクター一覧 */}
           <ul
             style={{
               display: "grid",
@@ -30,7 +28,7 @@ export default async function Home() {
               gap: "20px",
             }}
           >
-            {characters.map((character) => (
+            {chars.map((character) => (
               <CharacterCard key={character.id} character={character} />
             ))}
           </ul>
