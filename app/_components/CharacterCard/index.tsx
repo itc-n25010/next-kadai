@@ -1,13 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./index.module.css";
-import type { Character } from "@/app/_types/character"; // ★これ
+import type { Character } from "@/app/_libs/microcms";
 
 type Props = {
   character: Character;
 };
 
-// 学園 → CSSクラス
+// 学園 → CSS クラス対応
 const schoolClassMap: Record<string, string> = {
   アビドス高等学校: styles.abydos,
   ゲヘナ学園: styles.gehenna,
@@ -21,6 +21,7 @@ export default function CharacterCard({ character }: Props) {
   return (
     <li className={`${styles.card} ${schoolClass}`}>
       <Link href={`/characters/${character.id}`} className={styles.link}>
+        {/* 立ち絵（9:16・比率維持） */}
         <div className={styles.imageWrapper}>
           <Image
             src={character.image?.url || "/no-image.png"}
@@ -31,6 +32,7 @@ export default function CharacterCard({ character }: Props) {
           />
         </div>
 
+        {/* キャラ名 */}
         <p className={styles.name}>{character.name}</p>
       </Link>
     </li>

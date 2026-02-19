@@ -2,20 +2,23 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+html,
+body {
   min-height: 100%;
 }
 
 body {
   font-family: "Noto Sans JP", sans-serif;
   background-color: #f5f7fb;
-  color: #333;
   background-image: url("/background.png");
-  background-size: cover; /* 画面いっぱい */
-  background-position: center; /* 中央 */
-  background-repeat: no-repeat; /* 繰り返さない */
-  background-attachment: fixed; /* スクロールでも固定（任意） */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 
-  color: #fff; /* 文字が見やすいように */
+  color: #111;
 }
 
 a {

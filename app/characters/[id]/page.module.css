@@ -21,17 +21,28 @@
   box-shadow: 0 16px 32px rgba(0, 0, 0, 0.2);
 }
 
+.imageWrapper {
+  position: relative;
+  width: 360px;
+  aspect-ratio: 9 / 16;
+  overflow: hidden;
+}
+
+.image {
+  object-fit: contain;
+}
+
 /* 学園カラー枠 */
-.アビドス高等学校 {
+.abydos {
   border: 4px solid #4ec3d9;
 }
-.ゲヘナ学園 {
+.gehenna {
   border: 4px solid #c94a4a;
 }
-.ミレニアムサイエンススクール {
+.millennium {
   border: 4px solid #4aa3ff;
 }
-.トリニティ総合学園 {
+.trinity {
   border: 4px solid #f3f057;
 }
 
@@ -45,8 +56,6 @@
   padding: 36px;
   border-radius: 24px;
   background: rgba(255, 255, 255, 0.92);
-  border-radius: 24px;
-  padding: 36px;
   box-shadow: 0 16px 32px rgba(0, 0, 0, 0.18);
 
   display: flex;
@@ -56,7 +65,7 @@
 
 /* キャラ名 */
 .name {
-  font-size: 5rem;
+  font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 800;
   color: #1f2a44;
 }
@@ -64,7 +73,7 @@
 /* メタ情報 */
 .meta {
   display: grid;
-  grid-template-columns: repeat(4, 1, 1);
+  grid-template-columns: repeat(3, 1fr);
   gap: 16px;
 }
 
