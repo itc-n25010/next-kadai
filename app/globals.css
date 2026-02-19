@@ -29,3 +29,7 @@ a {
 ul {
   list-style: none;
 }
+.search input {
+  color: #000;
+  background: #fff;
+}
