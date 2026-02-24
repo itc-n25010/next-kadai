@@ -22,22 +22,24 @@ Next.js（App Router）で表示するキャラクター図鑑サイトです。
 
 ## 📂 ディレクトリ構成
 
-app/
-├─ \_components/
-│ ├─ CharacterCard/ # キャラカード
-│ ├─ CharacterList/ # 一覧・検索・グルーピング
-│ └─ SchoolSection/ # 学園ヘッダー
-│
-├─ \_libs/
-│ └─ microcms.ts # microCMS API 通信
-│
-├─ \_types/
-│ └─ character.ts # Character 型定義
-│
-├─ characters/
-│ └─ [id]/
-│ └─ page.tsx # キャラクター詳細ページ
-│
-├─ page.tsx # トップ（一覧ページ）
-├─ globals.css
-└─ layout.tsx
+<p>
+app/</br>
+├─ \_components/</br>
+│ ├─ CharacterCard/ # キャラカード</br>
+│ ├─ CharacterList/ # 一覧・検索・グルーピング</br>
+│ └─ SchoolSection/ # 学園ヘッダー</br>
+│</br>
+├─ \_libs/</br>
+│ └─ microcms.ts # microCMS API 通信</br>
+│</br>
+├─ \_types/</br>
+│ └─ character.ts # Character 型定義</br>
+│</br>
+├─ characters/</br>
+│ └─ [id]/</br>
+│ └─ page.tsx # キャラクター詳細ページ</br>
+│</br>
+├─ page.tsx # トップ（一覧ページ）</br>
+├─ globals.css</br>
+└─ layout.tsx</br>
+</p>
