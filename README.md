@@ -10,13 +10,6 @@ Next.js（App Router）で表示するキャラクター図鑑サイトです。
 
 ---
 
-## 🔗 デモ
-
-※ デモURLがある場合はここに記載  
-（例）https://example.vercel.app
-
----
-
 ## 🛠 使用技術
 
 - Next.js（App Router）
