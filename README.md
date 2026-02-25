@@ -5,7 +5,7 @@
 microCMS で管理したキャラクター情報を  
 Next.js（App Router）で表示するキャラクター図鑑サイトです。
 
-学園 → 所属（部活）→ キャラクター の三段構成で一覧表示し、  
+学園 → 部活 → キャラクター の三段構成で一覧表示し、  
 キャラクター詳細ページや検索機能を備えています。
 
 ---
@@ -24,29 +24,27 @@ Next.js（App Router）で表示するキャラクター図鑑サイトです。
 
 ---
 
-app/
-├── \_components/
-│ ├── CharacterCard/
-│ │ ├── index.tsx # キャラクターカード（1体分）
-│ │ └── index.module.css # スタイル
-│ ├── CharacterList/
-│ │ ├── index.tsx # 一覧・検索・グループ化・ソート
-│ │ └── index.module.css # スタイル
-│ └── SchoolSection/
-│ ├── index.tsx # 学園ヘッダー（ロゴ付き）
-│ └── index.module.css # スタイル
-├── \_libs/
-│ └── microcms.ts # microCMS API 連携・型定義
-├── \_types/
-│ └── character.ts # Character 型定義
-├── characters/
-│ └── [id]/
-│ └── page.tsx # キャラクター詳細ページ
-├── page.tsx # トップ（一覧ページ）
-├── layout.tsx # ルートレイアウト
-└── globals.css # グローバルスタイル
-
----
+app/</br>
+├── \_components/</br>
+│ ├── CharacterCard/</br>
+│ │ ├── index.tsx # キャラクターカード（1体分）</br>
+│ │ └── index.module.css # スタイル</br>
+│ ├── CharacterList/</br>
+│ │ ├── index.tsx # 一覧・検索・グループ化・ソート</br>
+│ │ └── index.module.css # スタイル</br>
+│ └── SchoolSection/</br>
+│ ├── index.tsx # 学園ヘッダー（ロゴ付き）</br>
+│ └── index.module.css # スタイル</br>
+├── \_libs/</br>
+│ └── microcms.ts # microCMS API 連携・型定義</br>
+├── \_types/</br>
+│ └── character.ts # Character 型定義</br>
+├── characters/</br>
+│ └── [id]/</br>
+│ └── page.tsx # キャラクター詳細ページ</br>
+├── page.tsx # トップ（一覧ページ）</br>
+├── layout.tsx # ルートレイアウト</br>
+└── globals.css # グローバルスタイル</br>
 
 ---
 
@@ -173,24 +171,22 @@ app/
 
 ---
 
-microCMS
-↓
-getAllCharacters() (SSR)
-↓
-page.tsx
-↓
-CharacterList
-├─ 検索キーワードでフィルタリング
-├─ 学園・職種でグループ化
-└─ 各グループを学年順ソート
-↓
-学園ごとに表示
-├─ SchoolSection（学園ロゴ・名前）
-└─ 職種ごとに CharacterCard を グリッド表示
-↓
-ブラウザで表示
-
----
+microCMS</br>
+↓</br>
+getAllCharacters() (SSR)</br>
+↓</br>
+page.tsx</br>
+↓</br>
+CharacterList</br>
+├─ 検索キーワードでフィルタリング</br>
+├─ 学園・職種でグループ化</br>
+└─ 各グループを学年順ソート</br>
+↓</br>
+学園ごとに表示</br>
+├─ SchoolSection（学園ロゴ・名前）</br>
+└─ 職種ごとに CharacterCard を グリッド表示</br>
+↓</br>
+ブラウザで表示</br>
 
 ---
 
