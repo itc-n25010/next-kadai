@@ -1,5 +1,3 @@
-/* index.module.css */
-
 /* ===== 検索ボックス ===== */
 .searchBox {
   display: flex;
@@ -56,8 +54,8 @@
 }
 
 .roleLogo {
-  width: 48px;
-  height: 48px;
+  width: 120px;
+  height: 120px;
 }
 
 /* ===== キャラクター一覧 ===== */

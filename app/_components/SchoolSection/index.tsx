@@ -19,13 +19,7 @@ export default function SchoolSection({ school }: Props) {
     <div className={styles.wrapper}>
       {logo && (
         <div className={styles.logo}>
-          <Image
-            src={logo}
-            alt={`${school} ロゴ`}
-            width={120}
-            height={120}
-            priority
-          />
+          <Image src={logo} alt={`${school} ロゴ`} width={120} height={120} />
         </div>
       )}
 

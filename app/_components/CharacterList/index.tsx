@@ -131,8 +131,8 @@ export default function CharacterList({ characters, clubs }: Props) {
                     <Image
                       src={clubLogoMap[role]}
                       alt={`${role} ロゴ`}
-                      width={48}
-                      height={48}
+                      width={120}
+                      height={120}
                       className={styles.roleLogo}
                     />
                   )}
