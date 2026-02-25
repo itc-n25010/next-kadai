@@ -16,15 +16,11 @@ type Props = {
 /* =====================
    学年を数値に変換
 ===================== */
-const GRADE_MAP: Record<string, number> = {
-  "１年": 1,
-  "２年": 2,
-  "３年": 3,
-};
-
 function gradeToNumber(grade?: string | null): number {
-  if (!grade || typeof grade !== "string") return 0;
-  return GRADE_MAP[grade] ?? 0;
+  if (grade == null) return 999; // 学年不明は最後
+  const s = String(grade);
+  const match = s.match(/\d+/);
+  return match ? Number(match[0]) : 999;
 }
 
 /* =====================
@@ -77,7 +73,7 @@ export default function CharacterList({ characters }: Props) {
     Object.keys(map).forEach((school) => {
       Object.keys(map[school]).forEach((role) => {
         map[school][role].sort(
-          (a, b) => gradeToNumber(a.grade) - gradeToNumber(b.grade),
+          (a, b) => gradeToNumber(b.grade) - gradeToNumber(a.grade),
         );
       });
     });
