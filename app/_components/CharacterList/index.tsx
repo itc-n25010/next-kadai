@@ -1,16 +1,18 @@
 "use client";
 
 import { useState, useMemo } from "react";
+import Image from "next/image";
 import CharacterCard from "@/app/_components/CharacterCard";
 import SchoolSection from "@/app/_components/SchoolSection";
 import styles from "./index.module.css";
-import type { Character } from "@/app/_libs/microcms";
+import type { Character, Club } from "@/app/_libs/microcms";
 
 /* =====================
    Props
 ===================== */
 type Props = {
   characters: Character[];
+  clubs?: Club[];
 };
 
 /* =====================
@@ -37,7 +39,7 @@ const SCHOOL_ORDER = [
 /* =====================
    Component
 ===================== */
-export default function CharacterList({ characters }: Props) {
+export default function CharacterList({ characters, clubs }: Props) {
   const [keyword, setKeyword] = useState("");
   const [input, setInput] = useState("");
 
@@ -82,26 +84,24 @@ export default function CharacterList({ characters }: Props) {
   }, [filtered]);
 
   /* =====================
+     クラブロゴマップ
+  ===================== */
+  const clubLogoMap = useMemo(() => {
+    const map: Record<string, string | undefined> = {};
+    clubs?.forEach((club) => {
+      map[club.name] = club.logo?.url;
+    });
+    console.log("clubLogoMap:", map);
+    console.log("clubs from CMS:", clubs);
+    return map;
+  }, [clubs]);
+
+  /* =====================
     Render
   ===================== */
-  const roleTitleStyle = {
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    gap: "12px",
-    fontSize: "1.2rem",
-    fontWeight: 700,
-    margin: "24px 0 16px",
-  } as const;
-
-  const listGridStyle = {
-    display: "grid",
-    gridTemplateColumns: "repeat(auto-fill, minmax(180px, 1fr))",
-    gap: "20px",
-  } as const;
   return (
     <>
-      {/* 🔍 検索ボックス */}
+      {/* 検索ボックス */}
       <div className={styles.searchBox}>
         <input
           type="text"
@@ -115,7 +115,7 @@ export default function CharacterList({ characters }: Props) {
         </button>
       </div>
 
-      {/* 一覧 */}
+      {/* キャラクター一覧 */}
       {SCHOOL_ORDER.map((school) => {
         const roles = grouped[school];
         if (!roles) return null;
@@ -125,16 +125,21 @@ export default function CharacterList({ characters }: Props) {
             <SchoolSection school={school} />
 
             {Object.entries(roles).map(([role, chars]) => (
-              <div
-                key={role}
-                className={styles.roleBlock}
-                style={{ marginBottom: "32px" }}
-              >
-                <h3 className={styles.roleTitle} style={roleTitleStyle}>
-                  {role}
+              <div key={role} className={styles.roleBlock}>
+                <h3 className={styles.roleTitle}>
+                  {clubLogoMap[role] && (
+                    <Image
+                      src={clubLogoMap[role]}
+                      alt={`${role} ロゴ`}
+                      width={48}
+                      height={48}
+                      className={styles.roleLogo}
+                    />
+                  )}
+                  <span>{role}</span>
                 </h3>
 
-                <ul className={styles.list} style={listGridStyle}>
+                <ul className={styles.list}>
                   {chars.map((character) => (
                     <CharacterCard key={character.id} character={character} />
                   ))}

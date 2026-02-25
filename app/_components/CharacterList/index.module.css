@@ -55,6 +55,11 @@
   margin: 24px 0 16px;
 }
 
+.roleLogo {
+  width: 48px;
+  height: 48px;
+}
+
 /* ===== キャラクター一覧 ===== */
 .list {
   display: grid;
@@ -81,7 +86,6 @@
   box-shadow: 0 12px 28px rgba(60, 90, 200, 0.25);
 }
 
-/* 画像 */
 .imageWrapper {
   position: relative;
   width: 100%;
@@ -97,7 +101,6 @@
   height: 100%;
 }
 
-/* 名前 */
 .name {
   padding: 10px 0 14px;
   font-weight: 600;

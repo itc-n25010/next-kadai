@@ -69,3 +69,28 @@ export async function getCharacterDetail(id: string): Promise<Character> {
     contentId: id,
   });
 }
+
+/* =========================
+   所属（部活）一覧
+========================= */
+export type Club = {
+  name: string;
+  school: string;
+  logo?: MicroCMSImage;
+};
+
+export async function getClubList(): Promise<Club[]> {
+  try {
+    const res = await client.getList<Club>({
+      endpoint: "clubs",
+      queries: {
+        limit: 100,
+      },
+    });
+
+    return res.contents;
+  } catch (error) {
+    console.error("microcms.getClubList failed:", error);
+    throw error;
+  }
+}
