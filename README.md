@@ -32,8 +32,11 @@ app/</br>
 │ ├── CharacterList/</br>
 │ │ ├── index.tsx # 一覧・検索・グループ化・ソート</br>
 │ │ └── index.module.css # スタイル</br>
-│ └── SchoolSection/</br>
-│ ├── index.tsx # 学園ヘッダー（ロゴ付き）</br>
+│ ├── SchoolSection/</br>
+│ │ ├── index.tsx # 学園ヘッダー（ロゴ付き）</br>
+│ │ └── index.module.css # スタイル</br>
+│ └── SearchBox/</br>
+│ ├── index.tsx # 検索入力コンポーネント</br>
 │ └── index.module.css # スタイル</br>
 ├── \_libs/</br>
 │ └── microcms.ts # microCMS API 連携・型定義</br>
@@ -135,6 +138,14 @@ app/</br>
 トリニティ総合学園 → /logo/trinity.png
 
 ---
+
+### **app/\_components/SearchBox/index.tsx**
+
+検索入力欄を提供するシンプルなコンポーネント。
+
+- `value` / `onChange` でテキストが制御される
+- プレースホルダーはデフォルトで「キャラ名・学園で検索」
+- `CharacterList` で検索キーワード入力に使用
 
 ### **CSS モジュール**
 
